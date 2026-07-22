@@ -1,0 +1,16 @@
+# 1. Bỏ qua thư mục biên dịch nặng hàng trăm MB của ESP-IDF
+build/
+sdkconfig
+sdkconfig.old
+
+# 2. Bỏ qua các file rác của VS Code và Hệ điều hành
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# 3. Bỏ qua tất cả các file log
+*.log
+
+# ignore .cache
+.cache/
