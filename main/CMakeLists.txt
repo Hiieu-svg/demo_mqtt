@@ -1,2 +1,3 @@
 idf_component_register(SRCS "demo_mqtt.c" "wifi_app.c" "mqtt_app.c"
-                    INCLUDE_DIRS ".")
+                    INCLUDE_DIRS "."
+                    EMBED_TXTFILES "../hivemq_ca.pem")
