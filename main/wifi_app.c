@@ -19,12 +19,12 @@ static const char *TAG = "WIFI_APP";
 static void wifi_event_handler(void* arg, esp_event_base_t event_base,int32_t event_id, void* event_data)
 {
     if (event_base == WIFI_EVENT && event_id == WIFI_EVENT_STA_DISCONNECTED) {
-        ESP_LOGW(TAG, "⚠️ Mất kết nối Wi-Fi! Đang tự động kết nối lại...");
+        ESP_LOGW(TAG, "Wi-Fi not connected! Automatically reconnecting...");
         esp_wifi_connect();
     } 
     else if (event_base == IP_EVENT && event_id == IP_EVENT_STA_GOT_IP) {
         ip_event_got_ip_t* event = (ip_event_got_ip_t*) event_data;
-        ESP_LOGI(TAG, "✅ Kết nối thành công! IP của ESP32: " IPSTR, IP2STR(&event->ip_info.ip));
+        ESP_LOGI(TAG, "Kết nối thành công! IP của ESP32: " IPSTR, IP2STR(&event->ip_info.ip));
         mqtt_app_start();
     }
 }
